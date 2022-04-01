@@ -73,13 +73,13 @@
 			
 			<c:choose>
 				<c:when test="${purchase.tranCode.equals('001')}">
-					<td align="left">현재 구매완료 상태입니다.</td>
+					<td align="left">현재 <b>구매완료</b> 상태입니다.</td>
 				</c:when>
 				<c:when test="${purchase.tranCode.equals('002')}">
-					<td align="left">현재 배송중 상태입니다.</td>
+					<td align="left">현재 <b>배송중</b> 상태입니다.</td>
 				</c:when>
 				<c:otherwise>
-					<td align="left">현재 배송완료 상태입니다.</td>
+					<td align="left">현재 <b>배송완료</b> 상태입니다.</td>
 				</c:otherwise>
 			</c:choose>
 			

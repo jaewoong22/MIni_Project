@@ -106,6 +106,7 @@ function history(){
 					<a href="javascript:history()">최근 본 상품</a>
 				</td>
 			</tr>
+			
 		</table>
 	</td>
 </tr>

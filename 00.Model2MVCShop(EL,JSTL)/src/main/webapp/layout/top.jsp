@@ -22,7 +22,7 @@
 	<td height="10" >&nbsp;</td>
   </tr>
   <tr>
-    <td width="800" height="30"><h2> Model2 MVC Shop </h2></td>
+    <td width="800" height="30"><h2><a href="../main.jsp" target="rightFrame" style="text-decoration-line : none; color:black"> Model2 MVC Shop </a></h2></td>
   </tr>
   <tr>
     <td height="20" align="right" background="/images/img_bg.gif">

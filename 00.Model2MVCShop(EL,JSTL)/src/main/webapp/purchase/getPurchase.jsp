@@ -143,16 +143,21 @@ Purchase purchase = (Purchase)request.getAttribute("purchase");
 		<td align="right">
 			<table border="0" cellspacing="0" cellpadding="0">
 				<tr>
+				
+				<c:if test="${purchase.tranCode.equals('001') }">
 					<td width="17" height="23">
 						<img src="/images/ct_btnbg01.gif" width="17" height="23"/>
 					</td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01"	style="padding-top: 3px;">
-						<a href="/updatePurchaseView.do?tranNo=${purchase.tranNo }">수정</a>
+							<a href="/updatePurchaseView.do?tranNo=${purchase.tranNo }">수정</a>
 					</td>
 					<td width="14" height="23">
 						<img src="/images/ct_btnbg03.gif" width="14" height="23"/>
 					</td>
 					<td width="30"></td>
+					
+					</c:if>
+					
 					<td width="17" height="23">
 						<img src="/images/ct_btnbg01.gif" width="17" height="23"/>
 					</td>

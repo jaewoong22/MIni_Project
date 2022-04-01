@@ -74,6 +74,7 @@ public class PurchaseDAO {
 			purchase.setDivyRequest(rs.getString("dlvy_request"));
 			purchase.setDivyDate(rs.getString("dlvy_date"));
 			purchase.setOrderDate(rs.getDate("order_data"));
+			purchase.setTranCode(rs.getString("tran_status_code"));
 		}
 
 		con.close();
@@ -91,7 +92,7 @@ public class PurchaseDAO {
 		String sql="";
 		
 		if(buyerId.equals("admin")) {
-			sql = "SELECT p.prod_no, p.prod_name, t.* FROM product p, transaction t ORDER BY tran_no";
+			sql = "SELECT p.prod_name, t.* FROM product p, transaction t  WHERE p.prod_no=t.prod_no(+) AND t.tran_no IS NOT NULL ORDER BY tran_no";
 		}else {
 			sql = "SELECT p.prod_name, t.* FROM product p, transaction t  WHERE p.prod_no=t.prod_no(+) AND buyer_id='"+buyerId +"' ORDER BY tran_no";
 			
