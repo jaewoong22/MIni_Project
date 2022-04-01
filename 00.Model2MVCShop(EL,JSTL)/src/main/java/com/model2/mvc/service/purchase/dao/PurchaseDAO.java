@@ -91,9 +91,10 @@ public class PurchaseDAO {
 		String sql="";
 		
 		if(buyerId.equals("admin")) {
-			sql = "SELECT * FROM transaction order by tran_no";
+			sql = "SELECT p.prod_no, p.prod_name, t.* FROM product p, transaction t ORDER BY tran_no";
 		}else {
-			sql = "SELECT * FROM transaction WHERE buyer_id='"+buyerId +"' order by tran_no";
+			sql = "SELECT p.prod_name, t.* FROM product p, transaction t  WHERE p.prod_no=t.prod_no(+) AND buyer_id='"+buyerId +"' ORDER BY tran_no";
+			
 		}
 		
 		System.out.println("PurchaseDAO::Original SQL :: " + sql);
@@ -116,6 +117,7 @@ public class PurchaseDAO {
 				User user = new User();
 				purchase.setTranNo(rs.getInt("tran_no"));
 				product.setProdNo(Integer.parseInt(rs.getString("prod_no")));
+				product.setProdName(rs.getString("prod_name"));
 				purchase.setPurchaseProd(product);
 				user.setUserId(rs.getString("buyer_id"));
 				purchase.setBuyer(user);

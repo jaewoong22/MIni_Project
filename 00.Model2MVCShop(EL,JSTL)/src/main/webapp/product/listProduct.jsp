@@ -39,7 +39,12 @@
 							惑前 格废炼雀
 						</c:when>
 						<c:when test="${ param.menu.equals('search')}">
+							<c:if test="${ !user.role.equals('admin')}">
+							惑前格废
+							</c:if>
+							<c:if test="${ user.role.equals('admin')}">
 							惑前 包府
+							</c:if>
 						</c:when>
 					</c:choose>
 					</td>

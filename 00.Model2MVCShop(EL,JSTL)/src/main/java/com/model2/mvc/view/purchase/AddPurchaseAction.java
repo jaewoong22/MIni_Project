@@ -38,6 +38,7 @@ public class AddPurchaseAction extends Action {
 		purchase.setDivyDate(request.getParameter("receiverDate"));
 		purchase.setTranCode("001");
 		
+		System.out.println("APA에서 확인 ////////// "+purchase.getPurchaseProd().getProdName());
 		System.out.println(purchase);
 		
 		PurchaseService service = new PurchaseServiceImpl();

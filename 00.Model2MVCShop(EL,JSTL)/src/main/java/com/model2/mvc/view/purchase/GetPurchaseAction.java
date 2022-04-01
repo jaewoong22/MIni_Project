@@ -18,6 +18,8 @@ public class GetPurchaseAction extends Action {
 
 		PurchaseService service = new PurchaseServiceImpl();
 		Purchase purchase = service.getPurchase(tranNo);
+		
+		System.out.println("GPA에서 확인 ////////// "+purchase.getPurchaseProd().getProdName());
 
 		request.setAttribute("purchase", purchase);
 		

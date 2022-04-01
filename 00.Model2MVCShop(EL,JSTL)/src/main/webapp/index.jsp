@@ -13,7 +13,7 @@
     <frame src="/layout/left.jsp" name="leftFrame" scrolling="NO" noresize>
     <frame src="" name="rightFrame"  scrolling="auto">
   </frameset>
-
+	
 </frameset>
 
 <noframes>
