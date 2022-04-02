@@ -85,7 +85,19 @@ public class ProductDAO {
 				sql += " AND p.prod_price LIKE '%" + search.getSearchKeyword() + "%'";
 			}
 		}
-		sql += " ORDER BY p.prod_no";
+		
+		if(search.getOrderCondition() == null) {
+			sql += " ORDER BY p.prod_no";
+		}
+		if (search.getOrderCondition() != null) {
+			if(search.getOrderCondition().equals("0")) {
+				sql += " ORDER BY p.prod_no";
+			}else if (search.getOrderCondition().equals("1")) {
+				sql += " ORDER BY p.price, p.prod_no";
+			}else if(search.getOrderCondition().equals("2")) {
+				sql += "ORDER BY p.price desc, p.prod_no";
+			}
+		}
 
 		System.out.println("ProductDAO::Original SQL :: " + sql);
 		

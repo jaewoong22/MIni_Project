@@ -57,6 +57,8 @@
 	</tr>
 </table>
 
+
+
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
 	<tr>
 		<td align="right">
@@ -92,6 +94,34 @@
 				</tr>
 			</table>
 		</td>
+	</tr>
+</table>
+
+<table width="180px" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
+	<tr>
+		<td align="left">
+				<select name="orderCondition" class="ct_input_g" style="width:100px">
+				 	<option value="0"  ${ ! empty search.orderCondition && search.orderCondition==0 ? "selected" : "" }>--정렬하기--</option>
+					<option value="1"  ${ ! empty search.orderCondition && search.orderCondition==1 ? "selected" : "" }>낮은가격순</option>
+					<option value="2"  ${ ! empty search.orderCondition && search.orderCondition==2 ? "selected" : "" }>높은가격순</option>
+				</select>
+		</td>
+		<td align="left" width="70">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="17" height="23">
+						<img src="/images/ct_btnbg01.gif" width="17" height="23"/>
+					</td>
+					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
+						<a href="javascript:fncGetList('1');">조회</a>
+					</td>
+					<td width="14" height="23">
+						<img src="/images/ct_btnbg03.gif" width="14" height="23"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+		
 	</tr>
 </table>
 

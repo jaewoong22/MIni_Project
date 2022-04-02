@@ -8,6 +8,7 @@ public class Search {
 	private String searchCondition;
 	private String searchKeyword;
 	private int pageSize;
+	private String orderCondition;
 	
 	///Constructor
 	public Search() {
@@ -39,6 +40,14 @@ public class Search {
 	}
 	public void setSearchKeyword(String searchKeyword) {
 		this.searchKeyword = searchKeyword;
+	}
+
+	public String getOrderCondition() {
+		return orderCondition;
+	}
+
+	public void setOrderCondition(String orderCondition) {
+		this.orderCondition = orderCondition;
 	}
 
 	@Override

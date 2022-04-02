@@ -26,12 +26,12 @@ public class UpdateProductAction extends Action {
 		ProductService service = new ProductServiceImpl();
 		service.updateProduct(product);
 
-		HttpSession session = request.getSession();
-		int sessionId = ((Product) session.getAttribute("product")).getProdNo();
-
-		if(sessionId == prodNo ) {
-			session.setAttribute("product", product);
-		}
+//		HttpSession session = request.getSession();
+//		int sessionId = ((Product) session.getAttribute("product")).getProdNo();
+//
+//		if(sessionId == prodNo ) {
+//			session.setAttribute("product", product);
+//		}
 
 		return "redirect:/getProduct.do?prodNo="+prodNo ;
 	}

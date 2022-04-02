@@ -20,20 +20,22 @@
 	if (cookies!=null && cookies.length > 0) {
 		for (int i = 0; i < cookies.length; i++) {
 			Cookie cookie = cookies[i];
-			if (cookie.getName().equals("history")) {
-				
-				System.out.println("Not NULL일 때 저장된 쿠키값 |jsp| : "+cookie.getValue());
-				 
+			
+			if (cookie.getName().equals("history")) { 
 				history = cookie.getValue();
 			}
+			
+			System.out.println("history////"+history);
 		}
-		if (history != null) {
+		if (history != null ) {
 			String[] h = history.split("/");
 			for (int i = 0; i < h.length; i++) {
 				if (!h[i].equals("null")) {
-%>
-	<a href="/getProduct.do?prodNo=<%=h[i]%>&menu=search"	target="rightFrame"><%=h[i]%></a>
-<br>
+					
+					%>
+						<a href="/getProduct.do?prodNo=<%=h[i]%>&menu=search"	target="rightFrame"><%=h[i] %></a>
+					<br>
+					
 <%
 				}
 			}

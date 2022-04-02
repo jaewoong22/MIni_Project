@@ -20,6 +20,8 @@ public class PurchaseDAO {
 	}
 
 	public void insertPurchase(Purchase purchase) throws Exception {
+		System.out.println("insertPurchaseΩ√¿€");
+		System.out.println(purchase);
 
 		Connection con = DBUtil.getConnection();
 

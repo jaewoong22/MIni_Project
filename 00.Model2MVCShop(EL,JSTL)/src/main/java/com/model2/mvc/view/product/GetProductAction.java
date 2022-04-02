@@ -31,27 +31,28 @@ public class GetProductAction extends Action {
 //			System.out.println("NULL일 때 저장될 쿠키값"+newCookie.getValue());
 //		}
 		
-		String cv = "/"+prodNo;
+		String pn = "/"+prodNo;
+		
 		
 		if (cookies!=null && cookies.length > 0) {
 			for (int i = 0; i < cookies.length; i++) {
 				Cookie cookie = cookies[i];
 				
-				System.out.println("history 쿠키없음 : "+cookie.getName());
-				
-				Cookie newCookie = new Cookie("history",request.getParameter("prodNo"));
-				response.addCookie(newCookie);
-				
-				if (cookie.getName().equals("history")) {
+				if(!cookie.getName().equals("history")) {
+					Cookie prodCookie = new Cookie("history",request.getParameter("prodNo"));
+					response.addCookie(prodCookie);
+				}else if (cookie.getName().equals("history")) {
 					
-					String str = cookie.getValue()+ cv;
+					String str1 = cookie.getValue()+ pn;
 					
-					Cookie newCookie02 = new Cookie("history",str);
-					response.addCookie(newCookie02);
+					Cookie prodCookie02 = new Cookie("history",str1);
+					response.addCookie(prodCookie02);
 					
-					System.out.println("Not NULL일 때 저장된 쿠키값"+cookie.getValue());
-					System.out.println("Not NULL일 때 저장될 쿠키값"+str);
+					System.out.println("Not NULL일 때 저장된 prod쿠키값"+cookie.getValue());
+					System.out.println("Not NULL일 때 저장될 prod쿠키값"+str1);
 				}
+				
+				
 			}
 		}
 		

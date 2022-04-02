@@ -60,7 +60,14 @@
 			구매방법 
 		</td>
 		<td bgcolor="D6D6D6" width="1"></td>
-		<td class="ct_write01">${purchase.paymentOption }</td>
+		<td class="ct_write01">
+			<c:if test="${purchase.paymentOption.equals('1') }">
+				현금구매
+			</c:if>
+			<c:if test="${purchase.paymentOption.equals('2') }">
+				신용구매
+			</c:if>
+		</td>
 	</tr>
 	<tr>
 		<td height="1" colspan="3" bgcolor="D6D6D6"></td>
