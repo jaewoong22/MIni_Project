@@ -24,7 +24,8 @@ public class AddProductAction extends Action {
 		
 		ProductService service = new ProductServiceImpl();
 		service.addProduct(product);
+		request.setAttribute("product", product);
 		
-		return "redirect:/listProduct.do?menu=manage";
+		return "forward:/product/readProduct.jsp";
 	}
 }

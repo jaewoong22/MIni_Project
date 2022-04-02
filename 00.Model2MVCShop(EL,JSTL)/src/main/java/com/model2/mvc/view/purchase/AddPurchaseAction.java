@@ -44,10 +44,10 @@ public class AddPurchaseAction extends Action {
 		PurchaseService service = new PurchaseServiceImpl();
 		service.addPurchase(purchase);
 		
-		request.setAttribute("purchase", purchase); 
-		Purchase p = (Purchase)request.getAttribute("purchase");
-		System.out.println("Action에서의 tranCode ::: "+p.getTranCode());
-		System.out.println("Action에서의 tranNo ::: "+p.getTranNo());
+//		request.setAttribute("purchase", purchase); 
+//		Purchase p = (Purchase)request.getAttribute("purchase");
+//		System.out.println("Action에서의 tranCode ::: "+p.getTranCode());
+//		System.out.println("Action에서의 tranNo ::: "+p.getTranNo());
 		
 		return "forward:/purchase/getPurchaseView.jsp";
 	}

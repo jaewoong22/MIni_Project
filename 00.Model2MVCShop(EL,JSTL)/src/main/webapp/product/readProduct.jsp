@@ -1,18 +1,6 @@
 <%@ page contentType="text/html; charset=euc-kr" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%-- 
-<%@ page import="com.model2.mvc.service.domain.Product" %>
-<%@ page import="com.model2.mvc.service.domain.User" %>
-<%@ page import="com.model2.mvc.service.domain.Purchase" %>
---%>
-<%--
-Product product = (Product)request.getAttribute("product");
-System.out.println("grtProdcut.jsp :: "+request.getParameter("menu"));
-System.out.println(product.getProTranCode());
-//Purchase purchase = (Purchase)
-
---%>	
 
 <html>
 <head>
@@ -42,23 +30,6 @@ System.out.println(product.getProTranCode());
 </table>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:13px;">
-	<tr>
-		<td height="1" colspan="3" bgcolor="D6D6D6"></td>
-	</tr>
-	<tr>
-		<td width="104" class="ct_write">
-			상품번호 <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"/>
-		</td>
-		<td bgcolor="D6D6D6" width="1"></td>
-		<td class="ct_write01">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
-				<tr>
-					<td width="105">${product.prodNo}</td>
-					<td></td>
-				</tr>
-			</table>
-		</td>
-	</tr>
 	<tr>
 		<td height="1" colspan="3" bgcolor="D6D6D6"></td>
 	</tr>
@@ -114,15 +85,7 @@ System.out.println(product.getProTranCode());
 	<tr>
 		<td height="1" colspan="3" bgcolor="D6D6D6"></td>
 	</tr>
-	<tr>
-		<td width="104" class="ct_write">등록일자</td>
-		<td bgcolor="D6D6D6" width="1"></td>
-		<td class="ct_write01">${product.regDate }</td>
-	</tr>
-
-	<tr>
-		<td height="1" colspan="3" bgcolor="D6D6D6"></td>
-	</tr>
+	
 </table>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0"	style="margin-top:10px;">
@@ -131,27 +94,27 @@ System.out.println(product.getProTranCode());
 		<td align="right">
 			<table border="0" cellspacing="0" cellpadding="0">
 				<tr>
-				<c:if test="${!empty param.menu }">
+				
 					
 					<td width="17" height="23">
 						<img src="/images/ct_btnbg01.gif" width="17" height="23"/>
 					</td>
 					
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
-						<a href="/addPurchaseView.do?Prod_no=${product.prodNo }">구매</a>
+						<a href="/listProduct.do?menu=manage">확인</a>
 					</td>
 					
 					<td width="14" height="23">
 						<img src="/images/ct_btnbg03.gif" width="14" height="23">
 					</td>
-				</c:if>
+				
 					
 					<td width="30"></td>					
 					<td width="17" height="23">
 						<img src="/images/ct_btnbg01.gif" width="17" height="23">
 					</td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
-						<a href="javascript:history.go(-1);">확인</a>
+						<a href="/product/addProductView.jsp">추가등록</a>
 					</td>
 					<td width="14" height="23"><img src="/images/ct_btnbg03.gif" width="14" height="23"></td>
 				</tr>
