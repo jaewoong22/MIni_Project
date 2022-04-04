@@ -96,6 +96,16 @@ public class ProductDAO {
 				sql += " ORDER BY p.price, p.prod_no";
 			}else if(search.getOrderCondition().equals("2")) {
 				sql += "ORDER BY p.price desc, p.prod_no";
+			}else if(search.getOrderCondition().equals("3")) {
+				sql += " AND NVL(t.tran_status_code,'000')='000' ORDER BY p.prod_no";
+			}else if(search.getOrderCondition().equals("4")) {
+				sql += " AND NVL(t.tran_status_code,'000')='001' ORDER BY p.prod_no";
+			}else if(search.getOrderCondition().equals("5")) {
+				sql += " AND NVL(t.tran_status_code,'000')='002' ORDER BY p.prod_no";
+			}else if(search.getOrderCondition().equals("6")) {
+				sql += " AND NVL(t.tran_status_code,'000')='003' ORDER BY p.prod_no";
+			}else if(search.getOrderCondition().equals("7")) {
+				sql += " AND NVL(t.tran_status_code,'000') NOT IN('000') ORDER BY p.prod_no";
 			}
 		}
 

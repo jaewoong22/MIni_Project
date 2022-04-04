@@ -19,7 +19,7 @@
 
 <script type="text/javascript">
 function history(){
-	popWin = window.open("/history.jsp","popWin","left=300, top=200, width=300, height=200, marginwidth=0, marginheight=0, scrollbars=no, scrolling=no, menubar=no, resizable=no");
+	popWin = window.open("/history.jsp","popWin","left=300, top=200, width=300, height=400, marginwidth=0, marginheight=0, scrollbars=no, scrolling=no, menubar=no, resizable=no");
 }
 </script>
 
@@ -36,14 +36,14 @@ function history(){
 		<% 	if(vo != null){ %>
 		<tr>
 			<td class="Depth03">
-				<a href="/getUser.do?userId=<%=vo.getUserId() %>" target="rightFrame">개인정보조회</a>
+				<a href="/getUser.do?userId=<%=vo.getUserId() %>" target="rightFrame" style="text-decoration-line : none; color:black">&nbsp;개인정보조회</a>
 			</td>
 		</tr>
 		<%	}  %>
 		<% if(role.equals("admin")){%>
 		<tr>
 			<td class="Depth03" >
-				<a href="/listUser.do" target="rightFrame">회원정보조회</a>
+				<a href="/listUser.do" target="rightFrame" style="text-decoration-line : none; color:black">&nbsp;회원정보조회</a>
 			</td>
 		</tr>
 		<% } %>
@@ -58,20 +58,20 @@ function history(){
 <!--menu 02 line-->
 <tr>
 	<td valign="top"> 
-		<table  border="0" cellspacing="0" cellpadding="0" width="159">
+		<table  border="0" cellspacing="0" cellpadding="0" width="159" >
 			<tr>
-				<td class="Depth03">
-					<a href="../product/addProductView.jsp;" target="rightFrame">판매상품등록</a>
+				<td class="Depth03" >
+					<a href="../product/addProductView.jsp;" target="rightFrame" style="text-decoration-line : none; color:black">&nbsp;판매상품등록</a>
 				</td>
 			</tr>
 			<tr>
 				<td class="Depth03">
-					<a href="/listProduct.do?menu=manage"  target="rightFrame">판매상품관리</a>
+					<a href="/listProduct.do?menu=manage"  target="rightFrame" style="text-decoration-line : none; color:black">&nbsp;판매상품관리</a>
 				</td>
 			</tr>
 			<tr>
 				<td class="Depth03">
-					<a href="/listSale.do?menu=manage"  target="rightFrame">판매리스트조회</a>
+					<a href="/listSale.do?menu=manage"  target="rightFrame" style="text-decoration-line : none; color:black">&nbsp;판매리스트조회</a>
 				</td>
 			</tr>
 			<tr>
@@ -85,16 +85,16 @@ function history(){
 <!--menu 03 line-->
 <tr>
 	<td valign="top"> 
-		<table  border="0" cellspacing="0" cellpadding="0" width="159">
+		<table  border="0" cellspacing="0" cellpadding="0" width="159" >
 			<tr>
 				<td class="Depth03">
-					<a href="/listProduct.do?menu=search" target="rightFrame">상 품 검 색</a>
+					<a href="/listProduct.do?menu=search" target="rightFrame" style="text-decoration-line : none; color:black">&nbsp;상 품 검 색</a>
 				</td>
 			</tr>
 			<%	if(vo != null && role.equals("user")){%>
 			<tr>
 				<td class="Depth03">
-					<a href="/listPurchase.do"  target="rightFrame">구매이력조회</a>
+					<a href="/listPurchase.do"  target="rightFrame" style="text-decoration-line : none; color:black">&nbsp;구매이력조회</a>
 				</td>
 			</tr>
 			<%  }%>
@@ -103,7 +103,7 @@ function history(){
 			</tr>
 			<tr>
 				<td class="Depth03">
-					<a href="javascript:history()">최근 본 상품</a>
+					<a href="javascript:history()" style="text-decoration-line : none; color:black">&nbsp;최근 본 상품</a>
 				</td>
 			</tr>
 			

@@ -5,9 +5,9 @@
 <title>열어본 상품 보기</title>
 </head>
 
-<body>
-	당신이 열어본 상품을 알고 있다
-<br>
+<body align="center">
+	최근 본 상품목록
+<br><hr>
 <br>
 <%
 	request.setCharacterEncoding("euc-kr");
@@ -25,18 +25,18 @@
 				history = cookie.getValue();
 			}
 			
-			System.out.println("history////"+history);
 		}
 		if (history != null ) {
 			String[] h = history.split("/");
 			for (int i = 0; i < h.length; i++) {
 				if (!h[i].equals("null")) {
-					
+					String[] t = h[i].split("&");
 					%>
-						<a href="/getProduct.do?prodNo=<%=h[i]%>&menu=search"	target="rightFrame"><%=h[i] %></a>
+						<a href="/getProduct.do?prodNo=<%=t[0]%>&menu=search"	target="rightFrame"><img src="/images/<%=t[1] %>" width="100" height="100" align="absmiddle"/></a>
 					<br>
 					
 <%
+				
 				}
 			}
 		}

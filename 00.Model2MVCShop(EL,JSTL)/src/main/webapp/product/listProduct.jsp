@@ -100,11 +100,31 @@
 <table width="180px" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
 	<tr>
 		<td align="left">
+			<c:if test="${ !user.role.equals('admin')}">
 				<select name="orderCondition" class="ct_input_g" style="width:100px">
 				 	<option value="0"  ${ ! empty search.orderCondition && search.orderCondition==0 ? "selected" : "" }>--정렬하기--</option>
 					<option value="1"  ${ ! empty search.orderCondition && search.orderCondition==1 ? "selected" : "" }>낮은가격순</option>
 					<option value="2"  ${ ! empty search.orderCondition && search.orderCondition==2 ? "selected" : "" }>높은가격순</option>
+					<option value="3"  ${ ! empty search.orderCondition && search.orderCondition==3 ? "selected" : "" }>판매중인 상품</option>
 				</select>
+			</c:if>
+			<c:if test="${ user.role.equals('admin') && param.menu.equals('manage')}">
+				<select name="orderCondition" class="ct_input_g" style="width:100px">
+					<option value="0"  ${ ! empty search.orderCondition && search.orderCondition==0 ? "selected" : "" }>--정렬하기--</option>
+					<option value="3"  ${ ! empty search.orderCondition && search.orderCondition==3 ? "selected" : "" }>판매중</option>
+					<option value="4"  ${ ! empty search.orderCondition && search.orderCondition==4 ? "selected" : "" }>구매완료</option>
+					<option value="5"  ${ ! empty search.orderCondition && search.orderCondition==5 ? "selected" : "" }>배송중</option>
+					<option value="6"  ${ ! empty search.orderCondition && search.orderCondition==6 ? "selected" : "" }>배송완료</option>
+				</select>
+			</c:if>
+			<c:if test="${ user.role.equals('admin') && param.menu.equals('search')}">
+				<select name="orderCondition" class="ct_input_g" style="width:100px">
+					<option value="0"  ${ ! empty search.orderCondition && search.orderCondition==0 ? "selected" : "" }>--정렬하기--</option>
+					<option value="3"  ${ ! empty search.orderCondition && search.orderCondition==3 ? "selected" : "" }>판매중</option>
+					<option value="7"  ${ ! empty search.orderCondition && search.orderCondition==7 ? "selected" : "" }>구매완료</option>
+				</select>
+			</c:if>
+			
 		</td>
 		<td align="left" width="70">
 			<table border="0" cellspacing="0" cellpadding="0">

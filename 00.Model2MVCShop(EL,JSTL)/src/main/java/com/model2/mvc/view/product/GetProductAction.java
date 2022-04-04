@@ -24,22 +24,16 @@ public class GetProductAction extends Action {
 		
 		Cookie[] cookies = request.getCookies();
 		
-//		if(cookies== null) {
-//			Cookie newCookie = new Cookie("history",prodNo+",");
-//			response.addCookie(newCookie);
-//			
-//			System.out.println("NULL일 때 저장될 쿠키값"+newCookie.getValue());
-//		}
-		
-		String pn = "/"+prodNo;
-		
+		String img = product.getFileName();
+		String pn = "/"+prodNo+"&"+img;
+		String first = prodNo+"&"+img;
 		
 		if (cookies!=null && cookies.length > 0) {
 			for (int i = 0; i < cookies.length; i++) {
 				Cookie cookie = cookies[i];
 				
 				if(!cookie.getName().equals("history")) {
-					Cookie prodCookie = new Cookie("history",request.getParameter("prodNo"));
+					Cookie prodCookie = new Cookie("history",first);
 					response.addCookie(prodCookie);
 				}else if (cookie.getName().equals("history")) {
 					
