@@ -25,6 +25,7 @@
 				history = cookie.getValue();
 			}
 			
+			
 		}
 		if (history != null ) {
 			String[] h = history.split("/");
